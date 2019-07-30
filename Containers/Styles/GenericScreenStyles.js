@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import { Metrics, Colors, Fonts } from '../../Theme'
 
 export default StyleSheet.create({
+    mainScreen: {
+        flex: 1
+    },
     navBar: {
         marginTop: Metrics.statusBarHeight,
         height:Metrics.navBarHeight,
