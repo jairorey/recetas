@@ -5,6 +5,10 @@ import styles from './Styles/GenericScreenStyles';
 import NavBar from "../Components/NavBar";
 
 export default class GenericScreen extends Component {
+
+  static navigationOptions = {
+    title: "Home"
+  };
   constructor(props) {
     super(props)
 
