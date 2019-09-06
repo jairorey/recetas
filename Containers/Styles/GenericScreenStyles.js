@@ -5,6 +5,9 @@ export default StyleSheet.create({
     mainScreen: {
         flex: 1
     },
+    container: {
+        flex: 1
+    },
     navBar: {
         marginTop: Metrics.statusBarHeight,
         height:Metrics.navBarHeight,

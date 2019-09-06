@@ -1,20 +1,22 @@
 import {
     createStackNavigator,
     createBottomTabNavigator,
-    createDrawerNavigator,
     createAppContainer
   } from "react-navigation";
 
 import GenericScreen from "../Containers/GenericScreen";
 import ExploreScreen from "../Containers/ExploreScreen";
 import CategoriesScreen from "../Containers/CategoriesScreen";
+import RecipeDetailsScreen from "../Containers/RecipeDetailsScreen";
+import FavoritesScreen from "../Containers/FavoritesScreen";
+import CategoryScreen from "../Containers/CategoryScreen";
+
 import { Colors } from "../Theme";
-import TabBar from "../Components/TabBar";
 
 const TabNav = createBottomTabNavigator({
     Explore: { screen: ExploreScreen },
     Categories: {screen: CategoriesScreen },
-    Favorites: { screen: GenericScreen }
+    Favorites: { screen: FavoritesScreen }
 },{
     headerMode: "none",
     initialRouteName: "Explore",
@@ -23,7 +25,9 @@ const TabNav = createBottomTabNavigator({
 
 const AppNavigator = createStackNavigator (
     {
-        Home: { screen: TabNav }
+        Home: { screen: TabNav },
+        Details: { screen: RecipeDetailsScreen},
+        Category: {screen: CategoryScreen}
     },
     {
         headerMode: "none",

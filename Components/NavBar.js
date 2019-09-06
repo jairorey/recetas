@@ -1,10 +1,16 @@
 import React from "react";
 import { View, Text, TouchableOpacity, TouchableWithoutFeedback} from "react-native";
 import styles from "./Styles/NavBarStyles";
+import {withNavigation} from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 
 
 class NavBar extends React.Component {
+
+    goBack = () => {
+        const {navigation} = this.props;
+        navigation.goBack();
+    };
 
     pressFavorite = () => {
         const {onPressFavorite} = this.props;
@@ -13,37 +19,37 @@ class NavBar extends React.Component {
         }
     }
     backButton() {
-        const { leftButton } = this.props;
+        const { leftButton, transparent } = this.props;
         if (leftButton) {
             return (
-                <TouchableOpacity onPress={() => alert("back")}>
-                    <Icon name="ios-arrow-dropleft" />
+                <TouchableOpacity onPress={this.goBack}>
+                    <Icon name="ios-arrow-back" size={24} style={transparent ? styles.alternate : null}/>
                 </TouchableOpacity>
             );
         }
     }
     rightButton() {
-        const { rightButton, favorite } = this.props;
+        const { rightButton, favorite, transparent } = this.props;
         if (rightButton) {
             if (favorite) {
                 return(
                     <TouchableWithoutFeedback onPress={this.pressFavorite}>
-                        <Icon name="ios-heart" style={styles.favorite} />
+                        <Icon name="ios-heart" size={24} style={styles.favorite} />
                     </TouchableWithoutFeedback>
                     );
                 } else {
                 return(
                     <TouchableWithoutFeedback onPress={this.pressFavorite}>
-                        <Icon name="ios-heart" />
+                        <Icon name="ios-heart" size={24} style={transparent ? styles.alternate : null}/>
                     </TouchableWithoutFeedback>
                     );
             }
         }
     }
     render() {
-        const { title } = this.props;
+        const { title, transparent } = this.props;
         return (
-            <View {...this.props} style={styles.navBar}>
+            <View {...this.props} style={[styles.navBar, transparent ? styles.transparent : null]}>
                 <View style={styles.leftContainer}>
                     {this.backButton()}
                 </View>
@@ -58,4 +64,4 @@ class NavBar extends React.Component {
         )
     }
 }
-export default NavBar;
+export default withNavigation(NavBar);

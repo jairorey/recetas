@@ -8,10 +8,6 @@ import RecipeRow from "../Components/RecipeRow";
 import TabBar from '../Components/TabBar';
 import RecommendationBox from '../Components/RecommendationBox';
 
-import {observable} from "mobx";
-
-import {observer} from "mobx-react";
-
 const dataList = [
   {
     "id": "52944",
@@ -62,10 +58,7 @@ const dataList = [
   }
 ];
 
-@observer
-export default class ExploreScreen extends Component {
-
-  @observable counter = 0;
+export default class CategoryScreen extends Component {
 
   static navigationOptions = {
     title: "Explore"
@@ -74,10 +67,6 @@ export default class ExploreScreen extends Component {
     super(props)
     
     console.log("constructor");
-
-    setInterval( () => {
-      this.counter++;
-      }, 1000);
   }
 
   keyExtractor = (item) => item.id;
@@ -85,7 +74,6 @@ export default class ExploreScreen extends Component {
   renderList = () => {
     return (
         <FlatList
-          ListHeaderComponent = {this.renderRecommended}
             keyExtractor = {this.keyExtractor}
             data={dataList}
             renderItem = {({ item }) => <RecipeRow data={item} />}
@@ -93,22 +81,21 @@ export default class ExploreScreen extends Component {
     );
   };
 
-  renderRecommended = () => {
-    return <RecommendationBox data={dataList} />;
-  };
 
   render() {
+    const {navigation} = this.props;
+    const category = navigation.getParam("category", {});
     return(
         <View style={styles.mainScreen}>
             <NavBar 
-              leftButton={false} 
+              leftButton={true} 
               rightButton={false}
-              title={`Title ${this.counter}`}
+              title={category.name}
             />
             <View style={styles.container} >
               {this.renderList()}
             </View>
-            <TabBar selected="explore" />
+            <TabBar selected="categories" />
         </View>
     );
   }
