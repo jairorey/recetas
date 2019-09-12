@@ -63,7 +63,7 @@ const dataList = [
 ];
 
 @observer
-export default class ExploreScreen extends Component {
+class ExploreScreen extends Component {
 
   @observable counter = 0;
 
@@ -113,3 +113,5 @@ export default class ExploreScreen extends Component {
     );
   }
 }
+
+export default ExploreScreen;
