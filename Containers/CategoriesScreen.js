@@ -2,43 +2,15 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import styles from './Styles/GenericScreenStyles';
 
+import CategoryRow from "../Components/CategoryRow";
 import NavBar from "../Components/NavBar";
 
-import CategoryRow from "../Components/CategoryRow";
 import TabBar from '../Components/TabBar';
+import {observer, inject} from 'mobx-react';
 
-const categoryList = [
-  {
-    "id": "1",
-    "name":"Fish",
-  },
-  {
-    "id": "2",
-    "name":"Dessert",
-  },
-  {
-    "id": "3",
-    "name":"Appetizer",
-  },
-  {
-    "id": "4",
-    "name":"BREAKFAST & Brunch",
-  },
-  {
-    "id": "5",
-    "name":"beverages",
-  },
-  {
-    "id": "6",
-    "name":"Main Dish",
-  },
-  {
-    "id": "7",
-    "name":"Pasta",
-  }
-];
-
-export default class CategoriesScreen extends Component {
+inject("recipes")
+@observer
+class CategoriesScreen extends Component {
 
   static navigationOptions = {
     title: "Categories"
@@ -49,28 +21,35 @@ export default class CategoriesScreen extends Component {
     console.log("constructor");
   }
 
-  renderRow = ({ item }) => {
-    return <CategoryRow data={item} />
-  };
-
   keyExtractor = (item) => item.id;
 
+
+  renderRow = ({item}) => {
+    return <CategoryRow data={item} />;
+  };
+
   renderList = () => {
+
+    const {recipes} = this.props;
     return (
         <FlatList
             keyExtractor = {this.keyExtractor}
-            data={categoryList}
+            data={recipes.categoriesSource}
             renderItem = {this.renderRow}
         />
     );
   };
 
+
   render() {
+    const {navigation} = this.props;
+    const category = navigation.getParam("category", {});
     return(
         <View style={styles.mainScreen}>
             <NavBar 
-              leftButton={false} 
-              title="Categories"
+              leftButton={true} 
+              rightButton={false}
+              title={category.name}
             />
             <View style={styles.container} >
               {this.renderList()}
@@ -80,3 +59,5 @@ export default class CategoriesScreen extends Component {
     );
   }
 }
+
+export default CategoriesScreen;
