@@ -1,0 +1,81 @@
+{
+    "categories": [
+        {
+            "id": "1",
+            "name": "Fish"
+        },
+        {
+            "id": "2",
+            "name": "Meat"
+        },
+        {
+            "id": "3",
+            "name": "Breakfast"
+        },
+        {
+            "id": "4",
+            "name": "Fruit"
+        },
+        {
+            "id": "5",
+            "name": "Vegan"
+        }
+    ],
+    "recipes": [
+        {
+            "id": "52944",
+            "name": "Escovitch Fish",
+            "categoryId": "1",
+            "duration": 11,
+            "complexity": "Hard",
+            "photo": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+            "people": "3",
+            "recomended": "1",
+            "ingredients": "5 whole small/medium sized Snappers. \r\n Grount. \r\n Parrot or Goat Fish cleaned. \r\n 1 1/2 tsp. (7 ml) Salt \r\n 1 1/2 tsp. (7 ml) Pepper \r\n 3 Garlic \r\n Cooking Oil \r\n White Vinegar \r\n 2 Onions \r\n 2 Scotch Bonnet Pepper \r\n 10 pimentos",
+            "description": "Wash fish in vinegar and water. Dry fish in paper towel and place on a plate. Cut a small deep gashes on each side of the fish. Rub salt and pepper on outside and in the cavities you made and on the outside. then put the fish on a plate or in a shallow bowl. Place oil in a frying pan/sauce pan. Enough to fry one side of the fish. Please note that this is not a deep fry therefore the fish should NOT be completely submerged in the oil. Place 2 cloves of Garlic in the pot and heat on high. Put cinnamon stick in a pot of boiling water to alleviate the smell of the frying fish. Remove garlic cloves from pot. Carefully place fish on its side in to the hot oil. (as many as the frying pan hold). Fry crisp and turn down the heat as necessary. Turn other side and fry crisp. Place fried fish on a plate with dry paper towels. Slice onions, scotch bonnet pepper, Place onions, scotch bonnet pepper, and pimento in a small pot with vinegar. Boil contents on stove for approx. 5 min. (Be careful of your eyes burning if contents are overheated), Pour contents on the fried fish for a hot and spicy flavor"
+        },
+        {
+            "id": "52943",
+            "name": "Oxtail with broad beans",
+            "categoryId": "2",
+            "duration": 11,
+            "complexity": "Hard",
+            "photo": "https://www.themealdb.com/images/media/meals/1520083578.jpg",
+            "people": "3",
+            "ingredients": "2 eggs\r\n4 tomatoes\r\nsalt\r\npepper",
+            "description": "Toss the oxtail width the onion, spring garlin, ginger, chilli, soy sauce, thyme, salt, medium high heat. Disolve the cornflour in 2 tablespoons."
+        },
+        {
+            "id": "52492",
+            "name": "Roast fennel and  aubergine paella",
+            "categoryId": "2",
+            "duration": 11,
+            "complexity": "Hard",
+            "photo": "https://www.themealdb.com/images/media/meals/1520081754.jpg",
+            "people": "3",
+            "ingredients": "2 eggs\r\n4 tomatoes\r\nsalt\r\npepper",
+            "description": "1 Put the fennel, aubergine, pepper and cougernee in a roasting tray. Add a glug of alive."
+        },
+        {
+            "id": "3",
+            "categoryName": "Fish",
+            "name": "Escovitch Fish",
+            "categoryId": "3",
+            "duration": "11",
+            "complexity": "Hard",
+            "favorite": "1",
+            "photo": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+            "people": "3"
+        },
+        {
+            "id": "4",
+            "categoryName": "Fish",
+            "name": "Escovitch Fish",
+            "categoryId": "4",
+            "duration": "11",
+            "complexity": "Hard",
+            "photo": "https://www.themealdb.com/images/media/meals/1520084413.jpg",
+            "people": "3"
+        }
+    ]
+}

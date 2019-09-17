@@ -8,17 +8,21 @@ import NavBar from "../Components/NavBar";
 import TabBar from '../Components/TabBar';
 import {observer, inject} from 'mobx-react';
 
-inject("recipes")
-@observer
+
 class CategoriesScreen extends Component {
 
   static navigationOptions = {
     title: "Categories"
   };
   constructor(props) {
-    super(props)
+    super(props);
     
     console.log("constructor");
+  }
+
+  componentDidMount = () => {
+    const { recipes } = this.props;
+    recipes.getCategories();
   }
 
   keyExtractor = (item) => item.id;
@@ -60,4 +64,4 @@ class CategoriesScreen extends Component {
   }
 }
 
-export default CategoriesScreen;
+export default inject('recipes')(observer(CategoriesScreen));
