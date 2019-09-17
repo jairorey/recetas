@@ -8,7 +8,8 @@ import NavBar from "../Components/NavBar";
 import TabBar from '../Components/TabBar';
 import {observer, inject} from 'mobx-react';
 
-
+@inject("recipes")
+@observer
 class CategoriesScreen extends Component {
 
   static navigationOptions = {
@@ -64,4 +65,4 @@ class CategoriesScreen extends Component {
   }
 }
 
-export default inject('recipes')(observer(CategoriesScreen));
+export default CategoriesScreen;
